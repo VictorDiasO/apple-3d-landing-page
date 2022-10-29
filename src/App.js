@@ -6,6 +6,7 @@ import DesignSections from "./sections/DesignSections";
 import DisplaySection from "./sections/DisplaySection";
 import ProcessorSection from "./sections/ProcessorSection";
 import BatterySections from "./sections/BatterySections";
+import ColorSection from "./sections/ColorSection";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <DisplaySection />
       <ProcessorSection />
       <BatterySections />
+      <ColorSection />
     </>
   );
 }
