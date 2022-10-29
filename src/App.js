@@ -5,6 +5,7 @@ import PhoneModel from "./sections/PhoneModel";
 import DesignSections from "./sections/DesignSections";
 import DisplaySection from "./sections/DisplaySection";
 import ProcessorSection from "./sections/ProcessorSection";
+import BatterySections from "./sections/BatterySections";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <DesignSections />
       <DisplaySection />
       <ProcessorSection />
+      <BatterySections />
     </>
   );
 }
