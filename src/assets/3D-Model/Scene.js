@@ -8,11 +8,31 @@ title: Apple iPhone 13 Pro Max
 to create this file, run: npx gltfjsx scene.gltf
 */
 
-import React, { useRef } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import gsap from 'gsap'
+import { useThree } from '@react-three/fiber'
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 export function Model(props) {
+  const group = useRef();
   const { nodes, materials } = useGLTF('/scene.gltf')
+  let camera = useThree(state => state.camera);
+
+  useLayoutEffect(() => {
+    // gsap.to(camera.position, { x: 1, y: 0.5 });
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#phone-model",
+        start: "top top",
+        end: "bottom+=500 bottom",
+        markers: true,
+      }
+    })
+
+    t1.fromTo(camera.position, { y: 2 }, { y: 0 })
+  }, []);
+  
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>

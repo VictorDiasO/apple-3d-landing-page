@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import styled from 'styled-components'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { Environment, OrbitControls } from '@react-three/drei';
 import { Model } from '../assets/3D-Model/Scene';
 
 const Container = styled.div`
@@ -16,13 +16,15 @@ const Container = styled.div`
 
 const PhoneModel = () => {
   return (
-    <Container>
-      <Canvas>
+    <Container id="phone-model">
+      <Canvas camera={{fov: 14}}>
         <ambientLight intensity={1.25} />
-        <directionalLight position={[1, 0, 0]} />
-        <Model />
-        <meshStandardMaterial color="red" />
-        <OrbitControls />
+        <directionalLight position={0.4} />
+        <Suspense fallback={null}>
+          <Model />
+        </Suspense>
+        <Environment preset='night'/>
+        {/* <OrbitControls /> */}
       </Canvas>
     </Container>
   )
