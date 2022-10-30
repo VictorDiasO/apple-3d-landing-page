@@ -97,8 +97,8 @@ const DisplaySection = () => {
           scrub: 1,
         },
       })
-      .fromTo(textOne.current, { x: 0 }, { x: "20%" }, "key1")
-      .fromTo(textTwo.current, { x: 0 }, { x: "-20%" }, "key1");
+      .fromTo(textOne.current, { x: 0 }, { x: "-20%" }, "key1")
+      .fromTo(textTwo.current, { x: 0 }, { x: "20%" }, "key1");
 
     return () => {
       if (t1) t1.kill();

@@ -3,6 +3,10 @@ import React from 'react'
 import { useLayoutEffect } from 'react';
 import { useRef } from 'react';
 import styled from 'styled-components'
+import { Environment, useGLTF } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import { Model2 } from '../components/Scene2';
 
 const Section = styled.section`
   width: 100vw;
@@ -41,6 +45,7 @@ const Center = styled.div`
   transform: translate(-50%, -50%) rotate(-90deg);
   font-size: var(--fontxxl);
   text-transform: uppercase;
+  filter: brightness(0.85);
 `;
 
 const ColorSection = () => {
@@ -48,6 +53,8 @@ const ColorSection = () => {
   const rigthRef = useRef(null);
   const leftRef = useRef(null);
   const textRef = useRef(null);
+
+  const { materials } = useGLTF('/scene.gltf');
 
   useLayoutEffect(() => {
     let Elem = sectionRef.current;
@@ -57,7 +64,10 @@ const ColorSection = () => {
     let textElem = textRef.current;
 
     let updateColor = (color, text, rgbColor) => {
+      materials.Body.color.set(color);
+
       textElem.innerText = text;
+      textElem.style.color = color;
       rightElem.style.backgroundColor = `rgba(${rgbColor}, 0.4)`;
       leftElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
     }
@@ -67,7 +77,7 @@ const ColorSection = () => {
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
-        end: `+=${Elem.offsetWidth}`,
+        end: `+=${Elem.offsetWidth + 1000}`,
         scrub: 1,
         pin: true,
         pinSpacing: true,
@@ -78,7 +88,7 @@ const ColorSection = () => {
       scrollTrigger: {
         trigger: Elem,
         start: "top top",
-        end: `+=${Elem.offsetWidth}`,
+        end: `+=${Elem.offsetWidth + 1000}`,
         scrub: 1
       }
     }).to(
@@ -97,6 +107,38 @@ const ColorSection = () => {
         onReverseComplete: updateColor,
         onReverseCompleteParams: ["#F9E5C9", "Gold", "249, 229, 201"]
       }
+    ).to(
+      Elem,
+      {
+        onStart: updateColor,
+        onStartParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
+        onReverseComplete: updateColor,
+        onReverseCompleteParams: ["#505F4E", "Alpine Green", "80, 95, 78"]
+      }
+    ).to(
+      Elem,
+      {
+        onStart: updateColor,
+        onStartParams: ["#574f6f", "Deep Purple", "87, 79, 111"],
+        onReverseComplete: updateColor,
+        onReverseCompleteParams: ["#574f6f", "Deep Purple", "87, 79, 111"]
+      }
+    ).to(
+      Elem,
+      {
+        onStart: updateColor,
+        onStartParams: ["#A50011", "Red", "165, 0, 17"],
+        onReverseComplete: updateColor,
+        onReverseCompleteParams: ["#A50011", "Red", "165, 0, 17"]
+      }
+    ).to(
+      Elem,
+      {
+        onStart: updateColor,
+        onStartParams: ["#215E7C", "Blue", "33, 94, 124"],
+        onReverseComplete: updateColor,
+        onReverseCompleteParams: ["#215E7C", "Blue", "33, 94, 124"]
+      }
     )
 
     return () => {
@@ -107,8 +149,18 @@ const ColorSection = () => {
   return (
     <Section ref={sectionRef}>
       <Left ref={leftRef} />
-      <Center ref={textRef}>Sierra Blue</Center>
-      <Right ref={rigthRef} />
+      <Center ref={textRef} />
+      <Right ref={rigthRef}>
+        <Canvas camera={{fov: 6.5}}>
+          <ambientLight intensity={1.25} />
+          <directionalLight position={0.4} />
+          <Suspense fallback={null}>
+            <Model2 />
+          </Suspense>
+          <Environment preset='night'/>
+          {/* <OrbitControls /> */}
+        </Canvas>
+      </Right>
     </Section>
   )
 }

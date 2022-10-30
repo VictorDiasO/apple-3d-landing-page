@@ -7,19 +7,23 @@ import DisplaySection from "./sections/DisplaySection";
 import ProcessorSection from "./sections/ProcessorSection";
 import BatterySections from "./sections/BatterySections";
 import ColorSection from "./sections/ColorSection";
+import CameraSection from "./sections/CameraSection";
+import PricingSection from "./sections/PricingSection";
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Quote />
-      {/* <PhoneModel /> */}
+      <PhoneModel />
       <HeroSection />
       <DesignSections />
       <DisplaySection />
       <ProcessorSection />
       <BatterySections />
       <ColorSection />
+      <CameraSection />
+      <PricingSection />
     </>
   );
 }
