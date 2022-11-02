@@ -33,12 +33,29 @@ const TextContainer = styled.p`
     font-weight: 600;
     text-transform: capitalize;
   }
+
+  @media screen and (max-width: 70em) {
+    span {
+      font-size: var(--fontxxxl);
+    }
+  }
+
+  @media screen and (max-width: 64em) {
+    span {
+      font-size: var(--fontxxl);
+    }
+  }
+
+  @media screen and (max-width: 48em) {
+    span {
+      font-size: var(--fontlg);
+    }
+  }
 `;
 
 const TextContainer2 = styled.p`
   width: 100%;
   height: 50vh;
-  z-index: 1;
 
   display: flex;
   flex-direction: column;
@@ -51,6 +68,26 @@ const TextContainer2 = styled.p`
     width: 80%;
     font-weight: 600;
     text-transform: capitalize;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  @media screen and (max-width: 70em) {
+    span {
+      font-size: var(--fontxxl);
+    }
+  }
+
+  @media screen and (max-width: 64em) {
+    span {
+      font-size: var(--fontxl);
+    }
+  }
+
+  @media screen and (max-width: 48em) {
+    span {
+      font-size: var(--fontlg);
+    }
   }
 `;
 
