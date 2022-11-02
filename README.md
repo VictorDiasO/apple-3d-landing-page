@@ -1,4 +1,4 @@
-# Create an awesome 3d Landing Page for iphone in React JS
+# 3D Landing Page for iPhone | React JS
 
 <!--
 ![GitHub stars](https://img.shields.io/github/stars/codebucks27/Apple-iphone-3d-landing-page-starter-Code?style=social&logo=ApacheSpark&label=Stars&cacheSeconds=3600)&nbsp;&nbsp;
@@ -10,17 +10,6 @@ This repository contains starter code for Apple iphone 3d landing page in ReactJ
 
 View Demo👇: <br />
 https://apple-iphone14.netlify.app/ <br />
-
-If you want to learn how to create it please follow below tutorial👇: <br />
-https://youtu.be/cT160dOzpGY <br />
-[![YouTube Video Views](https://img.shields.io/youtube/views/cT160dOzpGY?style=social)](https://youtu.be/cT160dOzpGY)<br />
-
-⚠⚠⚠ If you want full code of this website then you can get it from here👇: <br />
-
-https://github.com/codebucks27/3D-Landing-page-for-Apple-iPhone <br />
-
-<h3 align="left">▶ Support me via:</h3><br />
-<p><a href="https://www.buymeacoffee.com/CodeBucks"> <img  src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" height="50" width="210" alt="CodeBucks" ></img></a></p><br><br>
 
 ### Images of The 3d landing page Website:
 
@@ -125,3 +114,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Credits to:
+If you want to learn how to create it please follow below tutorial👇: <br />
+https://youtu.be/cT160dOzpGY <br />
+[![YouTube Video Views](https://img.shields.io/youtube/views/cT160dOzpGY?style=social)](https://youtu.be/cT160dOzpGY)<br />
